@@ -1,0 +1,60 @@
+<%- include('includes/head') %>
+    <%- include('includes/nav') %>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+
+                <div class="col-lg-8 my-3">
+                    <h1 class="text-center">Login</h1>
+                    <p class="text-center lead">Cria ou conecte na sua conta</p>
+
+                    <%- include('includes/message') %>
+
+                    <div class="row">
+                        <div class="col-lg">
+                            <h1>Criar</h1>
+                            <p>Cria sua conta abaixo</p>
+
+                            <form class="form-cadastro" action="/login/register" method="POST">
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" class="form-control" name="email" placeholder="Enter email">
+                                </div>
+                                <div class="form-group">
+                                    <label>Senha</label>
+                                    <input type="password" class="form-control" name="password"
+                                        placeholder="Enter password">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Criar</button>
+                            </form>
+                        </div>
+
+                        <div class="col-lg">
+                            <h1>Conectar</h1>
+                            <p>Conecte na sua conta abaixo</p>
+
+                            <form class="form-login" action="/login/login" method="POST">
+                                <input type="hidden" name="_csrf" value=<%=csrfToken %>>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" class="form-control" name="email" placeholder="Enter email">
+                                </div>
+                                <div class="form-group">
+                                    <label>Senha</label>
+                                    <input type="password" class="form-control" name="password"
+                                        placeholder="Enter password">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Conectar</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+
+        <%- include('includes/footer') %>

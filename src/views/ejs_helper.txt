@@ -1,0 +1,19 @@
+<% Controle de fluxo (if, for...) %>
+<%= Imprime escapando caracteres %>
+<%- Imprime SEM escapar caracteres %>
+<%# Comentario %>
+<%- include('CAMINHO/ARQUIVO'); %>
+
+Exemplo 'if'
+
+<% if(condicao) { %>
+    <%= exibe %>
+<% } else { %>
+    <%= exibe outra coisa %>
+<% } %>
+
+Exemplo 'for'
+
+<% numeros.forEach(num => { %>
+    <%= num %><br>
+<% }); %>
